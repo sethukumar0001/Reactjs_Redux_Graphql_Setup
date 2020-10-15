@@ -1,0 +1,78 @@
+{
+  "name": "starter-kit-create-react-app-graphql",
+  "version": "1.0.0",
+  "description": "React create-react-app CLI Starter Kit",
+  "repository": "https://github.com/oleksandr-dziuban/starter-kit-create-react-app-graphql",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-context": "^1.0.20",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^16.14.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.3",
+    "redux": "^4.0.5",
+    "redux-form": "^8.3.6",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-inline-dotenv": "^1.6.0",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "enzyme-to-json": "^3.6.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-graphql": "^4.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-react": "^7.21.4",
+    "husky": "^4.3.0",
+    "jest-styled-components": "^7.0.3",
+    "jest-transform-graphql": "^2.1.0",
+    "lint-staged": "^10.4.0",
+    "react-addons-test-utils": "^15.6.2",
+    "serve": "^11.3.2",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-custom-processor-loader": "^0.6.0",
+    "stylelint-processor-styled-components": "^1.10.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject",
+    "lint:js": "eslint \"./src/**/*.js\"",
+    "lint:css": "stylelint \"./src/**\" --config ./.stylelintrc",
+    "serve": "serve ./build --open",
+    "precommit": "npm run test && lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "lint:js",
+      "lint:css",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
